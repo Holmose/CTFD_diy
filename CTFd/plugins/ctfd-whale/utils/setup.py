@@ -40,7 +40,7 @@ use_compression = true
     ))
     db.session.add(WhaleRedirectTemplate(
         'direct',
-        'nc {{ get_config("whale:frp_direct_ip_address", "127.0.0.1") }} {{ container.port }}',
+        '{{ get_config("whale:frp_direct_ip_address", "127.0.0.1") }}:{{ container.port }}',
         '''
 [direct_{{ container.user_id|string }}-{{ container.uuid }}]
 type = tcp

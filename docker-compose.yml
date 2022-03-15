@@ -78,7 +78,8 @@ services:
             memory: 3072M
   
   frps:
-    image: hoctf/frp:latest
+    build: ./frps
+    image: glzjin/frp:latest
     restart: always
     volumes:
       - ./frps:/conf/
